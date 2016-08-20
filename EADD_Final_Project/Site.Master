@@ -30,14 +30,14 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myTopNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#top"> <b>My SQL Turor</b> </a>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse" id="myTopNavbar">
                 <ul class="nav navbar-nav">
                     <li class="current-menu-item"><a href="Home.aspx"><b>Home</b></a></li>
                     <li><a href="#"><b>Lessons</b></a></li>
@@ -59,12 +59,21 @@
         <footer>
             <nav class="navbar navbar-inverse navbar-fixed-bottom">
                 <div class="container">
-                   <ul class="nav navbar-nav nav-stacked navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
-                    </ul>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myBottomNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="myBottomNavbar">
+                           <ul class="nav navbar-nav nav-stacked navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer text-center bottom">
                     <p>Copyright &copy; <%: DateTime.Now.Year %> - My SQL Tutor</p>

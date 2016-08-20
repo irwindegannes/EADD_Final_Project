@@ -1,30 +1,33 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Home.aspx.vb" Inherits="EADD_Final_Project.Home" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
         
-    <style type="text/css">
-        .auto-style1 {
-            text-decoration: underline;
-        }
-    </style>
-        
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
     
     <div class="container-fluid" style="margin-top:60px">
         <div class="row">
-            <div class="col-md-9" style="border-style:groove">
-                <div class="col-md-3">
-                    <asp:Image ID="ProfilePicture" runat="server" AlternateText="Profile Picture" ImageUrl="assets/profilepicture.png" Height="160px" Width="100%" />
-                        <br />
-                    <asp:Label ID="Rank" runat="server" Text="Rank: "></asp:Label>
+            <div class="col-md-9">
+                <div class="col-md-3" style="margin-right:60px">
+                    <asp:Image ID="ProfilePicture" runat="server" AlternateText="Profile Picture" ImageUrl="assets/profilepicture.png" Height="160px" Width="165px" style="margin-bottom:10px" />
+                        <br /><br />
+                    <asp:Label ID="Rank" runat="server" Text="Rank: " CssClass="well"></asp:Label><br /><br />
                     
                 </div>
-                <div class="col-md-6" style="border-style:groove">
-                    test
+                <div class="col-md-6">
+                    <div class="container-fluid">
+
+                        <h5 class="well">Account Summary</h5>
+
+                        <h5 class="well">Progress Summary</h5>
+
+                        <h5 class="well">Achievements Summary</h5>
+
+                        
+                        </div>
                 </div>
             </div>
-            <div class="col-md-3" style="border-style:groove">
-                <h2 style="text-align:center">Recent Activity</h2><br /><br />
+            <div class="col-md-3">
+                <h3 class="well" style="text-align:center">Recent Activity</h3><br />
             </div>
         
         </div>
