@@ -1,0 +1,82 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="EADD_Final_Project.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My SQL Tutor</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#top"> <b>My SQL Turor</b> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="current-menu-item"><a href="Home.aspx"><b>Home</b></a></li>
+                    <li><a href="#"><b>Lessons</b></a></li>
+                    <li><a href="#"><b>Progress</b></a></li>
+                    <li><a href="#"><b>Achievements</b></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><asp:LoginStatus ID="LoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="Login.aspx" /></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="content" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+    
+        <footer>
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container">
+                   <ul class="nav navbar-nav nav-stacked navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="panel-footer text-center bottom">
+                    <p>Copyright &copy; <%: DateTime.Now.Year %> - My SQL Tutor</p>
+                </div>
+            </nav>
+        </footer>    
+    </form>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <%--my Custom Script to control site features like automatically assigning active classes and menu auto-expand--%>
+    <script src="js/myJavaScript.js"></script>
+</body>
+</html>
