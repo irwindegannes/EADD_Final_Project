@@ -4,11 +4,11 @@
     </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
     
-    <div class="container-fluid" style="margin-top:60px">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
                 <div class="col-md-3" style="margin-right:60px">
-                    <asp:Image ID="ProfilePicture" runat="server" AlternateText="Profile Picture" ImageUrl="assets/profilepicture.png" Height="160px" Width="165px" style="margin-bottom:10px" />
+                    <asp:Image ID="ProfilePicture" runat="server" AlternateText="Profile Picture" ImageUrl="~/assets/profilepicture.png" Height="160px" Width="165px" style="margin-bottom:10px" />
                         <br /><br />
                     <asp:Label ID="Rank" runat="server" Text="Rank: " CssClass="well"></asp:Label><br /><br />
                     
@@ -22,7 +22,6 @@
 
                         <h5 class="well">Achievements Summary</h5>
 
-                        
                         </div>
                 </div>
             </div>

@@ -2,4 +2,17 @@
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
+    
+    <div class="container-fluid" style="margin-top:20px">
+        <h3><b>About Us</b></h3><br />
+        <p class="well" style="font-size:x-large">
+        Welcome to My SQL Tutor!<br /><br />
+
+        Here we offer a practical SQL programming course that may help expand your knowledge and understanding 
+        about the basic SQL language and techniques used in the world today. <br /><br />
+        -the My SQL Tutor Team
+        </p>
+    </div>
+
+
 </asp:Content>
