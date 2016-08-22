@@ -5,6 +5,14 @@ Public Class Home
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        CheckIdentityHF.Value = Request.Params("Identity")
+
+        If String.Equals(CheckIdentityHF.Value, "New") Then
+            CheckIdentityHF.Value = "Existing"
+
+
+        End If
+
         'connection to database to pull profile picture and user full name
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
 

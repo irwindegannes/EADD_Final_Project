@@ -76,6 +76,6 @@ Public Class UpdateProfile
 
     Protected Sub ContinueButton_Click(sender As Object, e As EventArgs) Handles ContinueButton.Click
         'redirects user to home page upon click
-        Response.Redirect("Home.aspx")
+        Response.Redirect("Home.aspx?Identity=New")
     End Sub
 End Class

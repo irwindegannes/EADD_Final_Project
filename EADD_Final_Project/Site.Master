@@ -39,10 +39,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myTopNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="~/Home.aspx"><b>Home</b></a></li>
-                    <li><a href="~/Lessons.aspx"><b>Lessons</b></a></li>
-                    <li><a href="~/Progress.aspx"><b>Progress</b></a></li>
-                    <li><a href="~/Achievements.aspx"><b>Achievements</b></a></li>
+                    <li class="active"><a href="Home.aspx"><b>Home</b></a></li>
+                    <li><a href="Lessons.aspx"><b>Lessons</b></a></li>
+                    <li><a href="Progress.aspx"><b>Progress</b></a></li>
+                    <li><a href="Achievements.aspx"><b>Achievements</b></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a runat="server" href="Account.aspx" title="Manage Your Account!">Hello, <%: Context.User.Identity.Name  %>!</a></li>
@@ -68,10 +68,10 @@
                         </button>
                         <div class="collapse navbar-collapse" id="myBottomNavbar">
                            <ul class="nav navbar-nav nav-stacked">
-                                <li><a href="~/Account.aspx"><span class="glyphicon glyphicon-user"></span> Account</a></li>
-                                <li><a href="~/About.aspx"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
-                                <li><a href="~/Help.aspx"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
-                                <li><a href="~/Contact.aspx"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                                <li><a href="Account.aspx"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                                <li><a href="About.aspx"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                                <li><a href="Help.aspx"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+                                <li><a href="Contact.aspx"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
                             </ul>
                         </div>
                     </div>
