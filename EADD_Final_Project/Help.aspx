@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
 
-	<div class="container-fluid" style="margin-top:20px">
+    <div class="container-fluid" style="margin-top:20px">
 		<h3 style="text-align:center">&nbsp;</h3>
         <h3 style="text-align:center"><b>Help - Frequently Asked Questions (FAQ)</b></h3><br />
 		

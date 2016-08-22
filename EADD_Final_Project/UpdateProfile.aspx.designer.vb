@@ -23,67 +23,76 @@ Partial Public Class UpdateProfile
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''TextBox1 control.
+    '''FirstNameTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents FirstNameTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox2 control.
+    '''RequiredFieldValidatorFirstName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RequiredFieldValidatorFirstName As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''TextBox3 control.
+    '''LastNameTextBox control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents LastNameTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Calendar1 control.
+    '''RequiredFieldValidatorLastName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Calendar1 As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents RequiredFieldValidatorLastName As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''RadioButtonList1 control.
+    '''CountryDropDownList control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents CountryDropDownList As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''DropDownList1 control.
+    '''RequiredFieldValidatorCountry control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents RequiredFieldValidatorCountry As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''FileUpload1 control.
+    '''ProfilePictureFileUpload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+    Protected WithEvents ProfilePictureFileUpload As Global.System.Web.UI.WebControls.FileUpload
+    
+    '''<summary>
+    '''InvalidFileTypeLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents InvalidFileTypeLabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''ReturnLink control.
@@ -95,11 +104,29 @@ Partial Public Class UpdateProfile
     Protected WithEvents ReturnLink As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''Button1 control.
+    '''SubmitButton control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents SubmitButton As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''ConfirmLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ConfirmLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''ContinueButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ContinueButton As Global.System.Web.UI.WebControls.Button
 End Class

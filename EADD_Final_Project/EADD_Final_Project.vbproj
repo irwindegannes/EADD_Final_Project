@@ -74,6 +74,7 @@
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="Models\" />
+    <Folder Include="UserImages\" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -109,7 +110,9 @@
     <Content Include="PasswordReset.aspx" />
     <Content Include="RegisterUser.aspx" />
     <Content Include="UpdateProfile.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Lessons.aspx" />
     <Content Include="Progress.aspx" />
     <Content Include="Achievements.aspx" />

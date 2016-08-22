@@ -8,57 +8,54 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h3><strong>Update Profile</strong></h3>
+        <%--Page Info--%>
+        <div class="container-fluid">
+            <h3><strong>Update User Profile - Step 2 of 2</strong></h3>
         </div>
-        <div>
+        <div class="container-fluid">
             <br />
-            First Name:
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Last Name:
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="FirstNameTextBox" runat="server"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidatorFirstName" runat="server" ErrorMessage="First Name Is Required" ForeColor="Red" ControlToValidate="FirstNameTextBox"></asp:RequiredFieldValidator>
             <br />
             <br />
-            Date of Birth: <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-&nbsp;<asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="LastNameTextBox" runat="server"></asp:TextBox>
+            
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidatorLastName" runat="server" ErrorMessage="Last Name Is Required" ForeColor="Red" ControlToValidate="LastNameTextBox"></asp:RequiredFieldValidator>
+            
             <br />
             <br />
-            Gender:
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" >
-                <asp:ListItem>Male</asp:ListItem>
-                <asp:ListItem>Female</asp:ListItem>
-                <asp:ListItem>Other</asp:ListItem>
-            </asp:RadioButtonList>
-            <br />
-            <br />
-            Country: 
-            <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem Enabled="False" Selected="True">Select Country</asp:ListItem>
+            Country:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="CountryDropDownList" runat="server">
+                <asp:ListItem Value="-1">Select Country</asp:ListItem>
                 <asp:ListItem>Trinidad &amp; Tobago</asp:ListItem>
                 <asp:ListItem>United States</asp:ListItem>
                 <asp:ListItem>England</asp:ListItem>
                 <asp:ListItem>Jamaica</asp:ListItem>
-                <asp:ListItem>Russia</asp:ListItem>
                 <asp:ListItem>Barbados</asp:ListItem>
                 <asp:ListItem>Mexico</asp:ListItem>
                 <asp:ListItem>Greenland</asp:ListItem>
                 <asp:ListItem>Japan</asp:ListItem>
                 <asp:ListItem>China</asp:ListItem>
             </asp:DropDownList>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidatorCountry" runat="server" ErrorMessage="Country Is Required" ForeColor="Red" ControlToValidate="CountryDropDownList" InitialValue="-1"></asp:RequiredFieldValidator>
             <br />
             <br />
-            Profile Picture:
-            <asp:FileUpload ID="FileUpload1" runat="server" />
+            Profile Picture:&nbsp; <asp:FileUpload ID="ProfilePictureFileUpload" runat="server" ToolTip="Gif, Png, Jpg, Jpeg &amp; Bmp are the only file types allowed." />
+            &nbsp;
+            <asp:Label ID="InvalidFileTypeLabel" runat="server" Text=""></asp:Label>
             <br />
             <br />
         </div>
-        <div>
-
-        <asp:HyperLink ID="ReturnLink" runat="server" NavigateUrl="~/Login.aspx">Return to Login</asp:HyperLink>
-        &nbsp;<asp:Button ID="Button1" runat="server" PostBackUrl="~/Home.aspx" Text="Submit" />
-
+        <div class="container-fluid">
+            <asp:HyperLink ID="ReturnLink" runat="server" NavigateUrl="~/Login.aspx">Return to Login</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp; <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
+        &nbsp;&nbsp;
+            <asp:Label ID="ConfirmLabel" runat="server" Text=""></asp:Label>
+            <br />
+            <br />
+        </div>
+        <div class="container-fluid">
+            <asp:Button ID="ContinueButton" runat="server" Text="Continue to Site" PostBackUrl="~/Home.aspx" />
         </div>
     </form>
 </body>

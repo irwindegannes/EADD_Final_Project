@@ -30,4 +30,13 @@ Partial Public Class Home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Rank As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''ProfilePictureHiddenField control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ProfilePictureHiddenField As Global.System.Web.UI.WebControls.HiddenField
 End Class

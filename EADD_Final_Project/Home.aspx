@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="col-md-3" style="margin-right:60px">
-                    <asp:Image ID="ProfilePicture" runat="server" AlternateText="Profile Picture" ImageUrl="~/assets/profilepicture.png" Height="160px" Width="165px" style="margin-bottom:10px" />
+                    <asp:Image ID="ProfilePicture" runat="server" AlternateText="Profile Picture" Height="160px" Width="165px" style="margin-bottom:10px" GenerateEmptyAlternateText="True" ToolTip="Profile Picture" />
                         <br /><br />
                     <asp:Label ID="Rank" runat="server" Text="Rank: " CssClass="well"></asp:Label><br /><br />
                     
@@ -16,7 +16,8 @@
                 <div class="col-md-6">
                     <div class="container-fluid">
 
-                        <h5 class="well">Account Summary</h5>
+                        <h5 class="panel-heading well">Account Summary</h5>
+                        <h5 class="panel-body">...</h5>
 
                         <h5 class="well">Progress Summary</h5>
 
@@ -33,5 +34,5 @@
     </div>
 
 
-
+    <asp:HiddenField ID="ProfilePictureHiddenField" runat="server" />
 </asp:Content>

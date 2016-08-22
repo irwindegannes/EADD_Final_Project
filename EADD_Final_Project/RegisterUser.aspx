@@ -9,7 +9,13 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <%--Page Info--%>
+        <div>
+            <h3><strong>Register New User - Step 1 of 2</strong></h3>
+            <br />    
+        </div>
+        
+        <%--Control to create new user--%>
         <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" CancelDestinationPageUrl="~/Login.aspx" ContinueDestinationPageUrl="~/UpdateProfile.aspx">
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server" />
