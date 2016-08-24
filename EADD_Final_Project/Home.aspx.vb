@@ -5,13 +5,13 @@ Public Class Home
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        CheckIdentityHF.Value = Request.Params("Identity")
+        'CheckIdentityHF.Value = Request.Params("Identity")
 
-        If String.Equals(CheckIdentityHF.Value, "New") Then
-            CheckIdentityHF.Value = "Existing"
+        'If String.Equals(CheckIdentityHF.Value, "New") Then
+        '    CheckIdentityHF.Value = "Existing"
 
 
-        End If
+        'End If
 
         'connection to database to pull profile picture and user full name
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
@@ -20,7 +20,7 @@ Public Class Home
 
         Dim NameSql As String = "SELECT * FROM [mySQLTUser] WHERE UserName=@UserName"
         Dim NameCmd As OleDbCommand = New OleDbCommand(NameSql, oleDbCon)
-        NameCmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
+        NameCmd.Parameters.AddWithValue("@UserName", Context.User.Identity.Name)
         Dim NameAdapter As New OleDbDataAdapter
         Dim NameData As New DataSet
         NameAdapter.SelectCommand = NameCmd
@@ -28,6 +28,7 @@ Public Class Home
 
         'variable to store user's full name
         Dim FullName = NameData.Tables(0).Rows(0).Item("FirstName").ToString & " " & NameData.Tables(0).Rows(0).Item("LastName").ToString
+        Dim Country = NameData.Tables(0).Rows(0).Item("Country").ToString
 
         'if user did not upload a profile picture a default image will be displayed
         If NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString = "" Then
@@ -35,6 +36,9 @@ Public Class Home
         Else
             ProfilePicture.ImageUrl = NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString
         End If
+
+        NameLabel.Text = FullName.ToString
+        CountryLabel.Text = Country.ToString
 
         'used in testing url data pull
         ProfilePictureHiddenField.Value = NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString

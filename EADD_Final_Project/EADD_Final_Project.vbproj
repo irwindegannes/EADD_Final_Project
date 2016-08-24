@@ -109,6 +109,7 @@
     <Content Include="Login.aspx" />
     <Content Include="PasswordReset.aspx" />
     <Content Include="RegisterUser.aspx" />
+    <Content Include="select.aspx" />
     <Content Include="UpdateProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -120,6 +121,7 @@
     <Content Include="About.aspx" />
     <Content Include="Help.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="where.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.vb">
@@ -170,6 +172,13 @@
     </Compile>
     <Compile Include="RegisterUser.aspx.vb">
       <DependentUpon>RegisterUser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="select.aspx.designer.vb">
+      <DependentUpon>select.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="select.aspx.vb">
+      <DependentUpon>select.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
@@ -233,6 +242,13 @@
     </Compile>
     <Compile Include="UpdateProfile.aspx.vb">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="where.aspx.designer.vb">
+      <DependentUpon>where.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="where.aspx.vb">
+      <DependentUpon>where.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

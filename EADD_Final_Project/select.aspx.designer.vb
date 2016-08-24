@@ -11,50 +11,41 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Site
+Partial Public Class _select
     
     '''<summary>
-    '''head control.
+    '''TextBox1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''form1 control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''NameLabel control.
+    '''Button2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents NameLabel As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''LoginStatus control.
+    '''Button3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LoginStatus As Global.System.Web.UI.WebControls.LoginStatus
-    
-    '''<summary>
-    '''content control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents content As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
 End Class

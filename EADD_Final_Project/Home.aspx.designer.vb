@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class Home
     
     '''<summary>
-    '''CheckIdentityHF control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CheckIdentityHF As Global.System.Web.UI.WebControls.HiddenField
-    
-    '''<summary>
     '''ProfilePicture control.
     '''</summary>
     '''<remarks>
@@ -39,6 +30,60 @@ Partial Public Class Home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Rank As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''NameLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents NameLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''CountryLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CountryLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''AchUnlockedLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AchUnlockedLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''AchRemaining control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AchRemaining As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''UserLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UserLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''CheckIdentityHF control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckIdentityHF As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
     '''ProfilePictureHiddenField control.

@@ -17,24 +17,24 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is SQL the only programming language going to be available?</a>
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is SQL the only programming language being taught on this site?</a>
 					</h4>
 				</div>
 					<div id="collapseOne" class="panel-collapse collapse">
 						<div class="panel-body">
-							Stay tuned for updates, coming soon!
+							Yes. As per request by the client. The site caters for Individual learners seeking to learn practical skills in SQL.
 						</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Can I skip locked Topics?</a>
+							<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Can I skip locked Lessons?</a>
 						</h4>
 					</div>
 					<div id="collapseTwo" class="panel-collapse collapse">
 						<div class="panel-body">
-							No. You must complete the previous topic before you can continue to the next one.
+							No. You must complete the previous Lesson before you can continue to the next one.
 						</div>
 					</div>
 				</div>
