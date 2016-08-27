@@ -101,7 +101,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ASPNetDB.mdb" />
-    <Content Include="assets\profilepicture.png" />
+    <Content Include="assets\images\profilepicture.png" />
+    <Content Include="assets\posters\delete_video_poster.png" />
+    <Content Include="assets\posters\insert_video_poster.png" />
+    <Content Include="assets\posters\intro_video_poster.png" />
+    <Content Include="assets\posters\select_video_poster.png" />
+    <Content Include="assets\posters\where_video_poster.png" />
+    <Content Include="assets\video\Intro.mp4" />
+    <Content Include="assets\video\MySQLTutorVideo.mp4" />
     <Content Include="bin\SampleAccessProviders.dll" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -109,7 +116,7 @@
     <Content Include="Login.aspx" />
     <Content Include="PasswordReset.aspx" />
     <Content Include="RegisterUser.aspx" />
-    <Content Include="select.aspx" />
+    <Content Include="TestPage.aspx" />
     <Content Include="UpdateProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -174,13 +181,6 @@
       <DependentUpon>RegisterUser.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="select.aspx.designer.vb">
-      <DependentUpon>select.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="select.aspx.vb">
-      <DependentUpon>select.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
@@ -237,6 +237,13 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="TestPage.aspx.designer.vb">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.aspx.vb">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="UpdateProfile.aspx.designer.vb">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
@@ -261,6 +268,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\lessons\delete_lesson.zip" />
+    <Content Include="assets\lessons\select_lesson.zip" />
+    <Content Include="assets\lessons\where_lesson.zip" />
+    <Content Include="assets\lessons\insert_lesson.zip" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

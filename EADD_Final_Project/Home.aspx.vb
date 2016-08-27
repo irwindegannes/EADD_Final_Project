@@ -29,10 +29,11 @@ Public Class Home
         'variable to store user's full name
         Dim FullName = NameData.Tables(0).Rows(0).Item("FirstName").ToString & " " & NameData.Tables(0).Rows(0).Item("LastName").ToString
         Dim Country = NameData.Tables(0).Rows(0).Item("Country").ToString
+        Dim UserProgress = NameData.Tables(0).Rows(0).Item("UserProgress").ToString
 
         'if user did not upload a profile picture a default image will be displayed
         If NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString = "" Then
-            ProfilePicture.ImageUrl = "~/assets/profilepicture.png"
+            ProfilePicture.ImageUrl = "~/assets/images/profilepicture.png"
         Else
             ProfilePicture.ImageUrl = NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString
         End If
@@ -44,6 +45,9 @@ Public Class Home
         ProfilePictureHiddenField.Value = NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString
 
         oleDbCon.Close()
+
+        ProgressLabel.Text = "<div class=""progress-bar progress-bar-info active"" role=""progressbar"" aria-valuemin=""0"" aria-valuemax=""100"" style=""width:" & UserProgress & "%; min-width:" & "20px" & """>" & UserProgress & "% </div>"
+
 
     End Sub
 

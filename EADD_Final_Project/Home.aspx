@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
 
-    <div class="container-fluid">
+    <div class="container-fluid well">
         <div class="row">
             <div class="col-md-3">
                 <div class="row">
@@ -28,55 +28,42 @@
                             <div class="page-header">
                                 <h1 style="text-align: center"><strong>Welcome to My SQL Tutor</strong></h1>
                             </div>
-                            <h4>Please see the Lessons tab above to begin learning SQL. Please enjoy your stay.</h4>
+                            <h4 style="text-align:center">Please see the Lessons tab above to begin learning SQL. Please enjoy your stay.</h4>
                             <br />
                         </div>
                     </div>
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                             <div class="container-fluid well">
-                                <h3 class="panel-heading"><strong>Account Summary</strong></h3>
+                                <h3><strong>Account Summary</strong></h3>
                                 <br />
                                 <h4><strong>Name:</strong>
                                     <asp:Label ID="NameLabel" runat="server" Text=""></asp:Label></h4>
-                                <br />
                                 <h4><strong>Country:</strong>
                                     <asp:Label ID="CountryLabel" runat="server" Text=""></asp:Label></h4>
-                                <br />
                             </div>
-                            <br />
                             <div class="container-fluid well">
-                                <h3 class="panel-heading"><strong>Overall Lesson Progress</strong></h3>
+                                <h3><strong>Overall Lesson Progress</strong></h3>
                                 <br />
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                        70%
-                                    </div>
+                                <div class="progress" style="background-color:grey">
+                                    <asp:Label ID="ProgressLabel" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
-                            <br />
                             <div class="container-fluid well">
-                                <h3 class="panel-heading"><strong>Achievement Summary</strong></h3>
+                                <h3><strong>Achievement Summary</strong></h3>
                                 <br />
+                                <h4><strong>Achievements Locked:</strong>
+                                    <asp:Label ID="AchUnlockedLabel" runat="server" Text="15"></asp:Label></h4>
                                 <h4><strong>Achievements Unlocked:</strong>
-                                    <asp:Label ID="AchUnlockedLabel" runat="server" Text="5"></asp:Label></h4>
-                                <br />
-                                <h4><strong>Achievements Remaining:</strong>
-                                    <asp:Label ID="AchRemaining" runat="server" Text="15"></asp:Label></h4>
-                                <br />
+                                    <asp:Label ID="AchRemaining" runat="server" Text="5"></asp:Label></h4>
                             </div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
+                            <br /><br />
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="container-fluid well">
-                                <h3 class="panel-heading">Recent Activity</h3>
+                                <h4 class="panel-heading"><strong>Recent Activity</strong></h4>
                                 <br />
                                 <asp:Label ID="UserLabel" runat="server" Text="John Downloaded the Select Lesson 3 days ago"></asp:Label>
                             </div>
@@ -88,12 +75,14 @@
                         <br />
                         <br />
                     </div>
+                    <div class="row" id="spacer">
+                        <div class="col-md-12"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
+    
     <asp:HiddenField ID="CheckIdentityHF" runat="server" />
     <asp:HiddenField ID="ProfilePictureHiddenField" runat="server" />
 </asp:Content>

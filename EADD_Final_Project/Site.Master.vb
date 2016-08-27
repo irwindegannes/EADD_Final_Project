@@ -5,6 +5,8 @@ Public Class Site
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        Page.MaintainScrollPositionOnPostBack = True
+
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
 
         oleDbCon.Open()

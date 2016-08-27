@@ -50,6 +50,15 @@ Partial Public Class Home
     Protected WithEvents CountryLabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''ProgressLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ProgressLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''AchUnlockedLabel control.
     '''</summary>
     '''<remarks>
