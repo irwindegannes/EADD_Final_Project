@@ -77,6 +77,15 @@ Partial Public Class Home
     Protected WithEvents AchRemaining As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''ActivityRepeater control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ActivityRepeater As Global.System.Web.UI.WebControls.Repeater
+    
+    '''<summary>
     '''UserLabel control.
     '''</summary>
     '''<remarks>

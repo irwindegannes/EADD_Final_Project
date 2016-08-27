@@ -15,9 +15,11 @@
                 <br />
                 <div class="container-fluid">
                     <div class="row">
-                        <h4 style="align-content: center"><strong>Rank: </strong>
-                            <asp:Label ID="Rank" runat="server" Text=""></asp:Label></h4>
-                        <br />
+                        <div class="col-md-12">
+                            <h4 style="align-content: center"><strong>Rank: </strong>
+                                <asp:Label ID="Rank" runat="server" Text=""></asp:Label></h4>
+                            <br />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,7 +67,15 @@
                             <div class="container-fluid well">
                                 <h4 class="panel-heading"><strong>Recent Activity</strong></h4>
                                 <br />
-                                <asp:Label ID="UserLabel" runat="server" Text="John Downloaded the Select Lesson 3 days ago"></asp:Label>
+                                
+                                <asp:Repeater ID="ActivityRepeater" runat="server" OnItemDataBound="LikeSub">
+                                    <ItemTemplate>
+                                        <h4><asp:Label ID="LikeInfoLabel" runat="server" Text=""></asp:Label></h4>
+                                        <h4><asp:Label ID="LessonIdLabel" runat="server" Text=""></asp:Label></h4>
+                                        <h4><asp:Label ID="DateLikedLabel" runat="server" Text=""></asp:Label></h4><br />
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                <h4><asp:Label ID="UserLabel" runat="server" Text="You Downloaded <br /> The Select Lesson 3 days ago"></asp:Label></h4><br /><br /><br /><br /><br />
                             </div>
                         </div>
                         <br />

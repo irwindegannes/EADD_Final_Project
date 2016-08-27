@@ -120,6 +120,7 @@
             </div>
         </div>
     <asp:HiddenField ID="LessonIdHF" runat="server" />
+    <asp:HiddenField ID="LessonDownloadURLHF" runat="server" />
     <asp:HiddenField ID="IsLikedHF" runat="server" />
     <asp:HiddenField ID="ActivityAnswerHF" runat="server" />
     <asp:HiddenField ID="ActivityIsCorrectHF" runat="server" Value="No" />

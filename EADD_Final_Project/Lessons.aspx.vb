@@ -163,6 +163,7 @@ Public Class Lessons
         Dim ActivityName = LessonContentData.Tables(0).Rows(0).Item("ActivityName").ToString
         Dim ActivityTask = LessonContentData.Tables(0).Rows(0).Item("ActivityTask").ToString
         Dim ActivitySolution = LessonContentData.Tables(0).Rows(0).Item("ActivitySolution").ToString
+        Dim LessonDLURL = LessonContentData.Tables(0).Rows(0).Item("LessonDownloadURL").ToString
 
         'Close database connection
         oleDbCon.Close()
@@ -173,6 +174,7 @@ Public Class Lessons
         ActivityTaskLabel.Text = ActivityTask
         ActivitySolutionLabel.ToolTip = ActivitySolution
         ActivityAnswerHF.Value = ActivitySolution
+        LessonDownloadURLHF.Value = LessonDLURL
 
 
         LessonIdHF.Value = 2
@@ -241,6 +243,7 @@ Public Class Lessons
         Dim ActivityName = LessonContentData.Tables(0).Rows(0).Item("ActivityName").ToString
         Dim ActivityTask = LessonContentData.Tables(0).Rows(0).Item("ActivityTask").ToString
         Dim ActivitySolution = LessonContentData.Tables(0).Rows(0).Item("ActivitySolution").ToString
+        Dim LessonDLURL = LessonContentData.Tables(0).Rows(0).Item("LessonDownloadURL").ToString
 
         'Close database connection
         oleDbCon.Close()
@@ -251,6 +254,7 @@ Public Class Lessons
         ActivityTaskLabel.Text = ActivityTask
         ActivitySolutionLabel.ToolTip = ActivitySolution
         ActivityAnswerHF.Value = ActivitySolution
+        LessonDownloadURLHF.Value = LessonDLURL
 
         LessonIdHF.Value = 3
 
@@ -318,6 +322,7 @@ Public Class Lessons
         Dim ActivityName = LessonContentData.Tables(0).Rows(0).Item("ActivityName").ToString
         Dim ActivityTask = LessonContentData.Tables(0).Rows(0).Item("ActivityTask").ToString
         Dim ActivitySolution = LessonContentData.Tables(0).Rows(0).Item("ActivitySolution").ToString
+        Dim LessonDLURL = LessonContentData.Tables(0).Rows(0).Item("LessonDownloadURL").ToString
 
         'Close database connection
         oleDbCon.Close()
@@ -328,6 +333,7 @@ Public Class Lessons
         ActivityTaskLabel.Text = ActivityTask
         ActivitySolutionLabel.ToolTip = ActivitySolution
         ActivityAnswerHF.Value = ActivitySolution
+        LessonDownloadURLHF.Value = LessonDLURL
 
         LessonIdHF.Value = 4
 
@@ -397,6 +403,7 @@ Public Class Lessons
         Dim ActivityName = LessonContentData.Tables(0).Rows(0).Item("ActivityName").ToString
         Dim ActivityTask = LessonContentData.Tables(0).Rows(0).Item("ActivityTask").ToString
         Dim ActivitySolution = LessonContentData.Tables(0).Rows(0).Item("ActivitySolution").ToString
+        Dim LessonDLURL = LessonContentData.Tables(0).Rows(0).Item("LessonDownloadURL").ToString
 
         'Close database connection
         oleDbCon.Close()
@@ -407,6 +414,7 @@ Public Class Lessons
         ActivityTaskLabel.Text = ActivityTask
         ActivitySolutionLabel.ToolTip = ActivitySolution
         ActivityAnswerHF.Value = ActivitySolution
+        LessonDownloadURLHF.Value = LessonDLURL
 
         LessonIdHF.Value = 5
 
@@ -458,6 +466,8 @@ Public Class Lessons
 
         StoreDownloadcmd.ExecuteNonQuery()
         oleDbCon.Close()
+
+        Response.Redirect(LessonDownloadURLHF.Value)
     End Sub
 
     Protected Sub LikeButton_Click(sender As Object, e As EventArgs) Handles LikeButton.Click
