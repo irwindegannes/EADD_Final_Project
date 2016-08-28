@@ -39,3 +39,4 @@
     });
 });
 
+document.body.style.backgroundColor = "#47476b";

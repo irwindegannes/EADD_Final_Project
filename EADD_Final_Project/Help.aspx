@@ -3,21 +3,23 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
 
-	<div class="container-fluid" style="margin-top:20px">
-		<h3 style="text-align:center">&nbsp;</h3>
-		<h3 style="text-align:center"><b>Help - Frequently Asked Questions (FAQ)</b></h3><br />
+	<div class="container-fluid well">
+		<h2 style="text-align:center"><strong>Help - Frequently Asked Questions (FAQ)</strong></h2><br />
 		
 		<div class="container-fluid">
 		<br />
-		<br />
 		
 		<div class="panel-group" id="accordion">
-			<div class="faqHeader">General questions</div>
-			<br />
+			<div class="container-fluid">
+				<div class="row">
+					<h3><strong>&nbsp General questions</strong></h3>
+					<br />
+				</div>
+			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is SQL the only programming language being taught on this site?</a>
+						<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is SQL the only programming language being taught on this site?</a>
 					</h4>
 				</div>
 					<div id="collapseOne" class="panel-collapse collapse">

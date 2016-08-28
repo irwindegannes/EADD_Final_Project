@@ -18,18 +18,15 @@
                         <asp:Button ID="InsertButton" runat="server" Text="4. INSERT Command" CssClass="btn-block" />
                         <br />
                         <asp:Button ID="DeleteButton" runat="server" Text="5. DELETE Command" CssClass="btn-block" />
-                        <br />
-                        <br />
-                   
                 </asp:Panel>
             </div>
             <div class="col-md-9">
                 <div class="container-fluid well">
                     <asp:Panel id="LessonIntroPanel" runat="server">
-                        <h2>Welcome to MY SQL Lessons</h2>
+                        <h2 style="text-align:center"><strong>Welcome to MY SQL Lessons</strong></h2>
                         <h3>Where you will learn all about SQL and complete common objectives</h3>
                         <h3>Select a Lesson begin learning!</h3>
-                        <br />
+                        <br /><br /><br /><br /><br /><br />
                     </asp:Panel>
                     <asp:Panel ID="LessonContentPanel" runat="server">
                         <div class="panel-heading">
@@ -87,8 +84,7 @@
                         <br /><br />
                         <asp:Panel ID="FooterPanel" runat="server">
                             <div class="row">
-                                <br /><br /><br />
-                                <br />
+                                <br /><br />
                                 <div class="col-md-6 text-center">
                                     <br /><br />
                                     <asp:Button ID="DownloadButton" runat="server" Text="Download This Lesson" />
@@ -124,5 +120,5 @@
     <asp:HiddenField ID="IsLikedHF" runat="server" />
     <asp:HiddenField ID="ActivityAnswerHF" runat="server" />
     <asp:HiddenField ID="ActivityIsCorrectHF" runat="server" Value="No" />
-    <br /><br /><br /><br /><br />
+    
 </asp:Content>

@@ -25,20 +25,42 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
-        <div>
-            <asp:Login ID="LoginControl" runat="server" DestinationPageUrl="~/Home.aspx">
-            </asp:Login>
-            <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/RegisterUser.aspx" ToolTip="Click this to create a new account.">Don&#39;t have an Account?</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="ResetLink" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>
+        <div class="container-fluid" style="margin-top: 20px">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6 well">
+                        <h2 style="text-align: center"><strong>My SQL Tutor</strong></h2>
+                        <h3 style="text-align: center">Login</h3>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6 well">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <asp:Login ID="LoginControl" runat="server" DestinationPageUrl="~/Home.aspx">
+                                </asp:Login>
+                                <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/RegisterUser.aspx" ToolTip="Click this to create a new account.">Don&#39;t have an Account?</asp:HyperLink>
+                                <br />
+                                <asp:HyperLink ID="ResetLink" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
         </div>
-            
     </form>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-   
+    <script src="js/myJavaScript.js"></script>
 </body>
 </html>

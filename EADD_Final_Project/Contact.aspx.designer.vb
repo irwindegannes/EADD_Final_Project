@@ -12,4 +12,31 @@ Option Explicit On
 
 
 Partial Public Class WebForm7
+    
+    '''<summary>
+    '''ContactUsTextBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ContactUsTextBox As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''SubmitButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SubmitButton As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''SubmitConfirmLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SubmitConfirmLabel As Global.System.Web.UI.WebControls.Label
 End Class

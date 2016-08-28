@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="content" runat="server">
 
-    <div class="container-fluid" style="margin-top: 20px">
-        <h3><b>About Us</b></h3>
+    <div class="container-fluid well">
+        <h2 style="text-align:center"><strong>About Us</strong></h2>
         <br />
         <p class="well" style="font-size: x-large">
             Welcome to My SQL Tutor!<br />
