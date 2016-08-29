@@ -46,6 +46,8 @@ Public Class Lessons
     Protected Sub IntroButton_Click(sender As Object, e As EventArgs) Handles IntroButton.Click
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
+        ActivityResponseLabel.Text = ""
+        updateGrid("")
 
         If ActivityPanel.Visible = True Then
             ActivityPanel.Visible = False
@@ -125,6 +127,8 @@ Public Class Lessons
     Protected Sub SelectButton_Click(sender As Object, e As EventArgs) Handles SelectButton.Click
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
+        ActivityResponseLabel.Text = ""
+        updateGrid("")
 
         If ActivityPanel.Visible = False Then
             ActivityPanel.Visible = True
@@ -213,6 +217,8 @@ Public Class Lessons
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
         IntroFooterPanel.Visible = False
+        ActivityResponseLabel.Text = ""
+        updateGrid("")
 
         If FooterPanel.Visible = False Then
             FooterPanel.Visible = True
@@ -292,6 +298,8 @@ Public Class Lessons
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
         IntroFooterPanel.Visible = False
+        ActivityResponseLabel.Text = ""
+        updateGrid("")
 
         If FooterPanel.Visible = False Then
             FooterPanel.Visible = True
@@ -371,6 +379,8 @@ Public Class Lessons
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
         IntroFooterPanel.Visible = False
+        ActivityResponseLabel.Text = ""
+        updateGrid("")
 
         If FooterPanel.Visible = False Then
             FooterPanel.Visible = True
@@ -537,6 +547,7 @@ Public Class Lessons
 
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
+        ActivityResponseLabel.Text = ""
 
         If ActivityPanel.Visible = False Then
             ActivityPanel.Visible = True
@@ -623,18 +634,34 @@ Public Class Lessons
 
         'this will take the user's response and remove all spacing and foreign characters to be used to compare against the correct answer
         'there are some inheient flaws, such as if the user enters 'SEL ECT' vs 'SELECT' they will still get the answer correct when infact it would be wrong
-        Dim UserResponse As String = Regex.Replace(ActivityTextBox.Text, "[^A-Za-z0-9\-='*,/]+?", "")
+        Dim UserResponse As String = Regex.Replace(ActivityTextBox.Text, "[^A-Za-z0-9\-='*,/]+?()", "")
 
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
 
+        'Test1.Text = UserResponse.Replace(" ", "")
+        'Test2.Text = ActivityAnswerHF.Value.Replace(" ", "")
 
+        'compares what the user inputs against the correct answer retrieved from the db stored in the hidden field on the page
         If (String.Compare(UserResponse.Replace(" ", ""), ActivityAnswerHF.Value.Replace(" ", ""), True) = 0) Then
-            'point = 1
+            'does this if correct
             ActivityResponseLabel.Text = "Great Job! <br /> Your Answer is Correct"
             ActivityIsCorrectHF.Value = "Yes"
             updateGrid(ActivityAnswerHF.Value)
+            ActivityTextBox.Text = ""
+
+            Try
+                insertActivity()
+            Catch ex As Exception
+                'message to user if attempt was made to insert another primary key
+                ActivityResponseLabel.Text = "Great Job! <br /> Your Answer is Correct. <br /> You already got a point for this activity"
+                ActivityTextBox.Text = ""
+            End Try
+
+
         Else
+            'does this if incorrect
             ActivityResponseLabel.Text = "Your Answer is Incorrect. <br /> Don't Give Up! Please Try Again!"
+            ActivityTextBox.Text = ""
             updateGrid("")
         End If
 
@@ -662,4 +689,23 @@ Public Class Lessons
         ActivityResultsGridView.AutoGenerateColumns = True
         ActivityResultsGridView.DataBind()
     End Sub
+
+
+
+    Protected Sub insertActivity()
+        'If the user entered the correct sql, insert the information into the database
+
+        Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
+        Dim ResponsesSql As String = "INSERT INTO LessonActivities(LessonId, UserName) VALUES (@LessonId, @UserName)"
+        Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)
+        cmd.CommandType = CommandType.Text
+
+        cmd.Parameters.AddWithValue("@LessonId", LessonIdHF.Value)
+        cmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
+        oleDbCon.Open()
+        cmd.ExecuteNonQuery()
+        oleDbCon.Close()
+
+    End Sub
+
 End Class

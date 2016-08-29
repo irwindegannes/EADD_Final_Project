@@ -12,7 +12,7 @@ Public Class UpdateProfile
 
             'config settings for connection to database table
             Dim oleDbConn As New OleDb.OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
-            Dim AddMySQLTUserSql As String = "Insert into mySQLTUser(UserName,FirstName,LastName,Country,ProfilePictureURL,UserCP,UserProgress) Values(@UserName,@FirstName,@LastName,@Country,@ProfilePictureURL,@UserCP,@UserProgress)"
+            Dim AddMySQLTUserSql As String = "Insert into mySQLTUser(UserName,FirstName,LastName,Country,ProfilePictureURL,UserCP,UserProgress,RankId) Values(@UserName,@FirstName,@LastName,@Country,@ProfilePictureURL,@UserCP,@UserProgress,@RankId)"
             Dim cmd As OleDbCommand = New OleDbCommand(AddMySQLTUserSql, oleDbConn)
 
             'assignment of data entered to table paramaters
@@ -55,6 +55,7 @@ Public Class UpdateProfile
 
             cmd.Parameters.AddWithValue("@UserCP", 0)
             cmd.Parameters.AddWithValue("@UserProgress", 0)
+            cmd.Parameters.AddWithValue("@RankId", 1)
 
             'opens executes and closes database connection
             oleDbConn.Open()

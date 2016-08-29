@@ -128,7 +128,6 @@
     <Content Include="About.aspx" />
     <Content Include="Help.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="where.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.vb">
@@ -249,13 +248,6 @@
     </Compile>
     <Compile Include="UpdateProfile.aspx.vb">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="where.aspx.designer.vb">
-      <DependentUpon>where.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="where.aspx.vb">
-      <DependentUpon>where.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

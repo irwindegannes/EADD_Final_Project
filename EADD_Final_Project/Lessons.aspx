@@ -65,6 +65,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h3 style="color:red"><asp:Label ID="ActivityResponseLabel" runat="server" Text=""></asp:Label></h3>
+                                            <%--Used in debugging an issue
+                                                <h4 style="color:red"><asp:Label ID="Test1" runat="server" Text=""></asp:Label></h4>
+                                            <h4 style="color:red"><asp:Label ID="Test2" runat="server" Text=""></asp:Label></h4>--%>
                                             <h3>Activity Results</h3>
                                             <asp:GridView ID="ActivityResultsGridView" runat="server" AutoGenerateColumns="False" Width="100%"></asp:GridView>
                                             <asp:SqlDataSource ID="ActivitySqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [Students]"></asp:SqlDataSource>

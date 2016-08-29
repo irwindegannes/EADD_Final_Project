@@ -17,7 +17,7 @@
                     <div class="col-md-9">
                         <h3>Message</h3>
                         <asp:TextBox ID="ContactUsTextBox" runat="server" TextMode="MultiLine" Rows="4" Width="100%"></asp:TextBox>
-                        <asp:Button ID="SubmitButton" runat="server" Text="Submit" CssClass="pull-right" />
+                        <asp:Button ID="SubmitButton" runat="server" Text="Send" CssClass="pull-right" />
                     </div>
                     <div class="col-md-3">
                         

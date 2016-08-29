@@ -46,6 +46,12 @@ Public Class Home
 
         oleDbCon.Close()
 
+        'calls the method used to get the user's progress
+        getprogress()
+
+        'assigns the progress to the user progress in the db
+        UserProgress = Session("progress")
+
         ProgressLabel.Text = "<div class=""progress-bar progress-bar-info active"" role=""progressbar"" aria-valuemin=""0"" aria-valuemax=""100"" style=""width:" & UserProgress & "%; min-width:" & "20px" & """>" & UserProgress & "% </div>"
 
         'likes repeater control that connects the repeater control to the Data
@@ -94,5 +100,29 @@ Public Class Home
         'join data values with the front end items
         LikeInfoLabel.Text = "You Liked Lesson " & lessonIdDB.ToString
 
+    End Sub
+
+    Protected Sub getprogress()
+        'out of all courses available, check how much is completed as a percentage
+        Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
+        Dim ResponsesSql As String = "select * from LessonActivities where UserName = @UserName"
+        Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)
+        cmd.CommandType = CommandType.Text
+        cmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
+
+        oleDbCon.Open()
+        Dim datareader As OleDbDataReader = cmd.ExecuteReader
+        Dim count As Integer = 0
+
+        While datareader.Read
+            count += 1
+        End While
+
+        Session("completed") = count
+        Session("unattempted") = 4 - count
+        count = (count / 4) * 100
+        Session("progress") = count
+
+        oleDbCon.Close()
     End Sub
 End Class

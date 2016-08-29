@@ -7,6 +7,7 @@ Public Class WebForm2
         'connection to database to pull profile picture and user full name
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
 
+        'open the connection to the db
         oleDbCon.Open()
 
         Dim NameSql As String = "SELECT * FROM [mySQLTUser] WHERE UserName=@UserName"
@@ -17,9 +18,7 @@ Public Class WebForm2
         NameAdapter.SelectCommand = NameCmd
         NameAdapter.Fill(NameData)
 
-        'variable to store user's full name
-        Dim FullName = NameData.Tables(0).Rows(0).Item("FirstName").ToString & " " & NameData.Tables(0).Rows(0).Item("LastName").ToString
-        Dim Country = NameData.Tables(0).Rows(0).Item("Country").ToString
+        'variable to store user's progress
         Dim UserProgress = NameData.Tables(0).Rows(0).Item("UserProgress").ToString
 
         'if user did not upload a profile picture a default image will be displayed
@@ -32,8 +31,16 @@ Public Class WebForm2
         'used in testing url data pull
         ProfilePictureHiddenField.Value = NameData.Tables(0).Rows(0).Item("ProfilePictureURL").ToString
 
+        'close the connection to the db
         oleDbCon.Close()
 
+        'calls the method used to get the user's progress
+        getprogress()
+
+        'assigns the progress to the user progress in the db
+        UserProgress = Session("progress")
+
+        'label used to display progress on the page
         ProgressLabel.Text = "<div class=""progress-bar progress-bar-info active"" role=""progressbar"" aria-valuemin=""0"" aria-valuemax=""100"" style=""width:" & UserProgress & "%; min-width:" & "20px" & """>" & UserProgress & "% </div>"
 
         'likes repeater control that connects the repeater control to the Data
@@ -54,6 +61,12 @@ Public Class WebForm2
         ActivityRepeater.DataBind()
 
         oleDbCon.Close()
+
+        'show attempted, completed and unattempted
+        LessonActALabel.Text = Session("completed") & " out of 4"
+        LessonActCLabel.Text = Session("completed") & " out of 4"
+        LessonActULabel.Text = Session("unattempted") & " out of 4"
+
     End Sub
 
     Protected Sub LikeSub(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.RepeaterItemEventArgs)
@@ -81,5 +94,29 @@ Public Class WebForm2
         'join data values with the front end items
         LikeInfoLabel.Text = "You Liked Lesson " & lessonIdDB.ToString
 
+    End Sub
+
+    Protected Sub getprogress()
+        'out of all courses available, check how much is completed as a percentage
+        Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
+        Dim ResponsesSql As String = "select * from LessonActivities where UserName = @UserName"
+        Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)
+        cmd.CommandType = CommandType.Text
+        cmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
+
+        oleDbCon.Open()
+        Dim datareader As OleDbDataReader = cmd.ExecuteReader
+        Dim count As Integer = 0
+
+        While datareader.Read
+            count += 1
+        End While
+
+        Session("completed") = count
+        Session("unattempted") = 4 - count
+        count = (count / 4) * 100
+        Session("progress") = count
+
+        oleDbCon.Close()
     End Sub
 End Class
