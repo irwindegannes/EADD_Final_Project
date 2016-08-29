@@ -47,6 +47,7 @@ Public Class Lessons
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
         ActivityResponseLabel.Text = ""
+        ActivityTextBox.Text = ""
         updateGrid("")
 
         If ActivityPanel.Visible = True Then
@@ -128,6 +129,7 @@ Public Class Lessons
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
         ActivityResponseLabel.Text = ""
+        ActivityTextBox.Text = ""
         updateGrid("")
 
         If ActivityPanel.Visible = False Then
@@ -218,6 +220,7 @@ Public Class Lessons
         LessonIntroPanel.Visible = False
         IntroFooterPanel.Visible = False
         ActivityResponseLabel.Text = ""
+        ActivityTextBox.Text = ""
         updateGrid("")
 
         If FooterPanel.Visible = False Then
@@ -299,6 +302,7 @@ Public Class Lessons
         LessonIntroPanel.Visible = False
         IntroFooterPanel.Visible = False
         ActivityResponseLabel.Text = ""
+        ActivityTextBox.Text = ""
         updateGrid("")
 
         If FooterPanel.Visible = False Then
@@ -380,6 +384,7 @@ Public Class Lessons
         LessonIntroPanel.Visible = False
         IntroFooterPanel.Visible = False
         ActivityResponseLabel.Text = ""
+        ActivityTextBox.Text = ""
         updateGrid("")
 
         If FooterPanel.Visible = False Then
@@ -495,7 +500,7 @@ Public Class Lessons
         LessonLikedCmd.Parameters.AddWithValue("@LessonId", LessonIdHF.Value)
 
 
-        '=========================== LOCKING CONTENTS ==========
+        '=========================== LOCKING CONTENTS ====================
         ''read rows from database
         'Dim variable = ""
         'oleDbCon.Open() 'open connent
@@ -634,19 +639,19 @@ Public Class Lessons
 
         'this will take the user's response and remove all spacing and foreign characters to be used to compare against the correct answer
         'there are some inheient flaws, such as if the user enters 'SEL ECT' vs 'SELECT' they will still get the answer correct when infact it would be wrong
-        Dim UserResponse As String = Regex.Replace(ActivityTextBox.Text, "[^A-Za-z0-9\-='*,/]+?()", "")
+        Dim UserResponse As String = Regex.Replace(ActivityTextBox.Text, "[^A-Za-z0-9\-='*(),/]+?", " ")
 
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
 
-        'Test1.Text = UserResponse.Replace(" ", "")
-        'Test2.Text = ActivityAnswerHF.Value.Replace(" ", "")
+        'UserResponseLabel.Text = UserResponse
+        'HFSolutionLabel.Text = ActivityAnswerHF.Value
 
         'compares what the user inputs against the correct answer retrieved from the db stored in the hidden field on the page
         If (String.Compare(UserResponse.Replace(" ", ""), ActivityAnswerHF.Value.Replace(" ", ""), True) = 0) Then
             'does this if correct
             ActivityResponseLabel.Text = "Great Job! <br /> Your Answer is Correct"
             ActivityIsCorrectHF.Value = "Yes"
-            updateGrid(ActivityAnswerHF.Value)
+            updateGrid(ActivityAnswerHF.Value.ToString)
             ActivityTextBox.Text = ""
 
             Try
