@@ -643,15 +643,17 @@ Public Class Lessons
 
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
 
-        'UserResponseLabel.Text = UserResponse
-        'HFSolutionLabel.Text = ActivityAnswerHF.Value
+        Dim testanswer = ActivityAnswerHF.Value
+        'UserResponseLabel.Text = UserResponse.Replace(" ", "")
+        'HFSolutionLabel.Text = ActivityAnswerHF.Value.Replace(" ", "")
+        'testanswerLabel.Text = testanswer
 
         'compares what the user inputs against the correct answer retrieved from the db stored in the hidden field on the page
         If (String.Compare(UserResponse.Replace(" ", ""), ActivityAnswerHF.Value.Replace(" ", ""), True) = 0) Then
             'does this if correct
             ActivityResponseLabel.Text = "Great Job! <br /> Your Answer is Correct"
             ActivityIsCorrectHF.Value = "Yes"
-            updateGrid(ActivityAnswerHF.Value.ToString)
+            updateGrid(testanswer)
             ActivityTextBox.Text = ""
 
             Try
@@ -661,8 +663,6 @@ Public Class Lessons
                 ActivityResponseLabel.Text = "Great Job! <br /> Your Answer is Correct. <br /> You already got a point for this activity"
                 ActivityTextBox.Text = ""
             End Try
-
-
         Else
             'does this if incorrect
             ActivityResponseLabel.Text = "Your Answer is Incorrect. <br /> Don't Give Up! Please Try Again!"
@@ -670,20 +670,39 @@ Public Class Lessons
             updateGrid("")
         End If
 
+        If (LessonIdHF.Value = 4) Or (LessonIdHF.Value = 5) Then
+            updateGrid("SELECT * FROM Students")
+        End If
 
-        Dim ResponsesSql As String = "INSERT INTO LessonAttempts(UserName, LessonId, DateAttempted, UserResposne, IsCorrect) VALUES (@UserName, @LessonId, @DateAttempted, @UserResposne, @IsCorrect)"
-        Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)
-        cmd.CommandType = CommandType.Text
+        If (LessonIdHF.Value = 5) Then
+            Dim DeleteUpdateSql As String = "INSERT INTO Students(UserName,FirstName,LastName,Age,Country) VALUES (@UserName,@FirstName,@LastName,@Age,@Country)"
+            Dim cmd As OleDbCommand = New OleDb.OleDbCommand(DeleteUpdateSql, oleDbCon)
+            cmd.CommandType = CommandType.Text
 
-        cmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
-        cmd.Parameters.AddWithValue("@LessonId", LessonIdHF.Value)
-        cmd.Parameters.AddWithValue("@DateAttempted", System.DateTime.Now())
-        cmd.Parameters.AddWithValue("@UserResponse", UserResponse)
-        'cmd.Parameters.AddWithValue("@IsCorrect", point)
+            cmd.Parameters.AddWithValue("@UserName", "ppartap")
+            cmd.Parameters.AddWithValue("@FirstName", "Preddie")
+            cmd.Parameters.AddWithValue("@LastName", "Partap")
+            cmd.Parameters.AddWithValue("@Age", "36")
+            cmd.Parameters.AddWithValue("@Country", "United States")
 
-        oleDbCon.Open()
-        'cmd.ExecuteNonQuery()
-        oleDbCon.Close()
+            oleDbCon.Open()
+            cmd.ExecuteNonQuery()
+            oleDbCon.Close()
+        End If
+
+        'Dim ResponsesSql As String = "INSERT INTO LessonAttempts(UserName, LessonId, DateAttempted, UserResposne, IsCorrect) VALUES (@UserName, @LessonId, @DateAttempted, @UserResposne, @IsCorrect)"
+        'Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)
+        'cmd.CommandType = CommandType.Text
+
+        'cmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
+        'cmd.Parameters.AddWithValue("@LessonId", LessonIdHF.Value)
+        'cmd.Parameters.AddWithValue("@DateAttempted", System.DateTime.Now())
+        'cmd.Parameters.AddWithValue("@UserResponse", UserResponse)
+        ''cmd.Parameters.AddWithValue("@IsCorrect", point)
+
+        'oleDbCon.Open()
+        ''cmd.ExecuteNonQuery()
+        'oleDbCon.Close()
 
     End Sub
 

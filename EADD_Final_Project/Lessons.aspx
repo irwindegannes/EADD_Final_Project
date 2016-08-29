@@ -68,7 +68,8 @@
                                             
                                             <%--Used in debugging an issue with the insert into activity--%>
                                             <%--<h4 style="color:red"><asp:Label ID="UserResponseLabel" runat="server" Text=""></asp:Label></h4>
-                                            <h4 style="color:red"><asp:Label ID="HFSolutionLabel" runat="server" Text=""></asp:Label></h4>--%>
+                                            <h4 style="color:red"><asp:Label ID="HFSolutionLabel" runat="server" Text=""></asp:Label></h4>
+                                            <h4 style="color:red"><asp:Label ID="testanswerLabel" runat="server" Text=""></asp:Label></h4>--%>
 
                                             <h3>Activity Results</h3>
                                             <asp:GridView ID="ActivityResultsGridView" runat="server" AutoGenerateColumns="False" Width="100%"></asp:GridView>
