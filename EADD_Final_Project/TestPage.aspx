@@ -4,15 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
 
     <div class="container-fluid">
-
-
-
-
-
-
-
-
-
+        
+        <br />
+        <h1> This is a test page used to test various pieces of code functionality </h1>
           
     </div>
 

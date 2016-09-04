@@ -112,6 +112,10 @@ Public Class WebForm2
             count += 1
         End While
 
+        If (count > 4) Then
+            count = 4
+        End If
+
         Session("completed") = count
         Session("unattempted") = 4 - count
         count = (count / 4) * 100

@@ -706,12 +706,13 @@ Public Class Lessons
         'If the user entered the correct sql, insert the information into the database
 
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
-        Dim ResponsesSql As String = "INSERT INTO LessonActivities(LessonId, UserName) VALUES (@LessonId, @UserName)"
+        Dim ResponsesSql As String = "INSERT INTO LessonActivities(LessonId, UserName, DateCompleted) VALUES (@LessonId, @UserName, @DateCompleted)"
         Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)
         cmd.CommandType = CommandType.Text
 
         cmd.Parameters.AddWithValue("@LessonId", LessonIdHF.Value)
         cmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
+        cmd.Parameters.AddWithValue("@DateCompleted", System.DateTime.Now())
         oleDbCon.Open()
         cmd.ExecuteNonQuery()
         oleDbCon.Close()
