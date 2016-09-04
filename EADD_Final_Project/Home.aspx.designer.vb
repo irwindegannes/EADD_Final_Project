@@ -59,24 +59,6 @@ Partial Public Class Home
     Protected WithEvents ProgressLabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''AchUnlockedLabel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents AchUnlockedLabel As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''AchRemaining control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents AchRemaining As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
     '''ActivityRepeater control.
     '''</summary>
     '''<remarks>
@@ -84,15 +66,6 @@ Partial Public Class Home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ActivityRepeater As Global.System.Web.UI.WebControls.Repeater
-    
-    '''<summary>
-    '''UserLabel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UserLabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''CheckIdentityHF control.

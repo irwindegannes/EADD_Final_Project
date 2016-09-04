@@ -53,13 +53,13 @@
                                     <asp:Label ID="ProgressLabel" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
-                            <div class="container-fluid well">
-                                <h3><strong>Achievements</strong></h3>
+                            <div class="container-fluid">
+                               <%-- <h3><strong>Achievements</strong></h3>
                                 <br />
                                 <h4><strong>Achievements Locked:</strong>
-                                    <asp:Label ID="AchUnlockedLabel" runat="server" Text="15"></asp:Label></h4>
+                                    <asp:Label ID="AchLockedLabel" runat="server" Text="7"></asp:Label></h4>
                                 <h4><strong>Achievements Unlocked:</strong>
-                                    <asp:Label ID="AchRemaining" runat="server" Text="5"></asp:Label></h4>
+                                    <asp:Label ID="AchUnlocked" runat="server" Text="2"></asp:Label></h4>--%>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -78,8 +78,8 @@
                                         <br />
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                <h4>
-                                    <asp:Label ID="UserLabel" runat="server" Text="You Downloaded <br /> The Select Lesson 3 days ago"></asp:Label></h4>
+                                <%--<h4>
+                                    <asp:Label ID="UserLabel" runat="server" Text="You Downloaded <br /> The Select Lesson 3 days ago"></asp:Label></h4>--%>
                             </div>
                         </div>
                     </div>

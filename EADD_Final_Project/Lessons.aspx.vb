@@ -126,6 +126,7 @@ Public Class Lessons
     End Sub
 
     Protected Sub SelectButton_Click(sender As Object, e As EventArgs) Handles SelectButton.Click
+
         LessonContentPanel.Visible = True
         LessonIntroPanel.Visible = False
         ActivityResponseLabel.Text = ""
@@ -181,7 +182,6 @@ Public Class Lessons
         ActivitySolutionLabel.ToolTip = ActivitySolution
         ActivityAnswerHF.Value = ActivitySolution
         LessonDownloadURLHF.Value = LessonDLURL
-
 
         LessonIdHF.Value = 2
 
@@ -499,20 +499,6 @@ Public Class Lessons
         LessonLikedCmd.Parameters.AddWithValue("@UserName", User.Identity.Name)
         LessonLikedCmd.Parameters.AddWithValue("@LessonId", LessonIdHF.Value)
 
-
-        '=========================== LOCKING CONTENTS ====================
-        ''read rows from database
-        'Dim variable = ""
-        'oleDbCon.Open() 'open connent
-        'Dim reader As OleDbDataReader = LessonLikedCmd.ExecuteReader
-
-        'If reader.HasRows = False Then 'if i'm looking for something in the database and i get results
-        '    Response.Redirect("default") 'go back to home page
-        'End If
-
-        'oleDbCon.Close()
-        '==================================================================
-
         'create Adapter that grabs data from DB
         Dim LessonLikedAdapter As New OleDbDataAdapter
 
@@ -708,7 +694,7 @@ Public Class Lessons
 
     Protected Sub updateGrid(sql As String)
         ActivitySqlDataSource.DataSourceMode = SqlDataSourceMode.DataReader
-        ActivitySqlDataSource.SelectCommand = sql 'new query to run
+        ActivitySqlDataSource.SelectCommand = sql
         ActivityResultsGridView.DataSource = ActivitySqlDataSource
         ActivityResultsGridView.AutoGenerateColumns = True
         ActivityResultsGridView.DataBind()
@@ -731,5 +717,19 @@ Public Class Lessons
         oleDbCon.Close()
 
     End Sub
+
+
+    '=========================== LOCKING CONTENTS TESTING====================
+    ''read rows from database
+    'Dim variable = ""
+    'oleDbCon.Open() 'open connent
+    'Dim reader As OleDbDataReader = LessonLikedCmd.ExecuteReader
+
+    'If reader.HasRows = False Then 'if i'm looking for something in the database and i get results
+    '    Response.Redirect("default") 'go back to home page
+    'End If
+
+    'oleDbCon.Close()
+    '==================================================================
 
 End Class

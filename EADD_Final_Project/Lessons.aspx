@@ -18,14 +18,16 @@
                         <asp:Button ID="InsertButton" runat="server" Text="4. INSERT Command" CssClass="btn-block" />
                         <br />
                         <asp:Button ID="DeleteButton" runat="server" Text="5. DELETE Command" CssClass="btn-block" />
+                        <br />
+                        <asp:Button ID="SandBoxButton" runat="server" Text="6. SandBox Activities" CssClass="btn-block" ToolTip="Has not been implemented..." Enabled="false" BorderStyle="Groove"/>
                 </asp:Panel>
             </div>
             <div class="col-md-9">
                 <div class="container-fluid well">
                     <asp:Panel id="LessonIntroPanel" runat="server">
                         <h2 style="text-align:center"><strong>Welcome to MY SQL Lessons</strong></h2>
-                        <h3>Where you will learn all about SQL and complete common objectives</h3>
-                        <h3>Select a Lesson begin learning!</h3>
+                        <h3 style="text-align:center">Where you will learn all about SQL and complete common learning objectives</h3>
+                        <h3 style="text-align:center">Select a Lesson to begin learning!</h3>
                         <br /><br /><br /><br /><br /><br />
                     </asp:Panel>
                     <asp:Panel ID="LessonContentPanel" runat="server">

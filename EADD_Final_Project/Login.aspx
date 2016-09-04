@@ -43,11 +43,25 @@
                     <div class="col-md-6 well">
                         <div class="row">
                             <div class="col-md-12">
-                                <asp:Login ID="LoginControl" runat="server" DestinationPageUrl="~/Home.aspx">
-                                </asp:Login>
-                                <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/RegisterUser.aspx" ToolTip="Click this to create a new account.">Don&#39;t have an Account?</asp:HyperLink>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-5">
+                                        <asp:Login ID="LoginControl" runat="server" DestinationPageUrl="~/Home.aspx" PasswordRecoveryUrl="~/PasswordReset.aspx" TitleText="">
+                                        </asp:Login>
+                                            </div>
+                                        <div class="col-md-4"></div>
+                                    </div>
+                                </div>
                                 <br />
-                                <asp:HyperLink ID="ResetLink" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>
+                                <div class="row">
+                                    <div class="col-md-6" style="text-align:center">
+                                        <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/RegisterUser.aspx" ToolTip="Click this to create a new account.">Create a new Account!</asp:HyperLink>
+                                    </div>
+                                    <div class="col-md-6" style="text-align:center">
+                                        <asp:HyperLink ID="ResetLink" runat="server" NavigateUrl="~/PasswordReset.aspx" ToolTip="Click this to reset your password.">Forgot your password?</asp:HyperLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

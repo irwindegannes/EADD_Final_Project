@@ -68,6 +68,15 @@ Partial Public Class Lessons
     Protected WithEvents DeleteButton As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''SandBoxButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SandBoxButton As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''LessonIntroPanel control.
     '''</summary>
     '''<remarks>

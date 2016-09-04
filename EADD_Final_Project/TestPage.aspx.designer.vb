@@ -12,4 +12,13 @@ Option Explicit On
 
 
 Partial Public Class TestPage
+    
+    '''<summary>
+    '''Login1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Login1 As Global.System.Web.UI.WebControls.Login
 End Class

@@ -68,22 +68,22 @@ Partial Public Class WebForm2
     Protected WithEvents LessonActULabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''AchUnlockedLabel control.
+    '''AchLockedLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents AchUnlockedLabel As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents AchLockedLabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''AchRemaining control.
+    '''AchUnlocked control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents AchRemaining As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents AchUnlocked As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''ActivityRepeater control.
@@ -93,15 +93,6 @@ Partial Public Class WebForm2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ActivityRepeater As Global.System.Web.UI.WebControls.Repeater
-    
-    '''<summary>
-    '''UserLabel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UserLabel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''CheckIdentityHF control.

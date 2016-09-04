@@ -49,17 +49,15 @@ Public Class Home
         'calls the method used to get the user's progress
         getprogress()
 
-        'assigns the progress to the user progress in the db
+        'assigns the progress to the user progress variable
         UserProgress = Session("progress")
 
         ProgressLabel.Text = "<div class=""progress-bar progress-bar-info active"" role=""progressbar"" aria-valuemin=""0"" aria-valuemax=""100"" style=""width:" & UserProgress & "%; min-width:" & "20px" & """>" & UserProgress & "% </div>"
 
-        'likes repeater control that connects the repeater control to the Data
+        'start of the likes repeater control that connects the repeater control to the Data
         oleDbCon.Open()
 
-        'define SQL statement
         Dim likesSql As String = "SELECT * FROM [LessonsLiked] WHERE UserName=@UserName ORDER BY DateLiked DESC"
-        'define the command
         Dim likesCmd As OleDbCommand = New OleDbCommand(likesSql, oleDbCon)
         likesCmd.Parameters.AddWithValue("@UserName", Context.User.Identity.Name)
         Dim likesAdapter As New OleDbDataAdapter
@@ -103,7 +101,7 @@ Public Class Home
     End Sub
 
     Protected Sub getprogress()
-        'out of all courses available, check how much is completed as a percentage
+        'out of all courses available, check how many is completed and display as a percentage
         Dim oleDbCon As New OleDbConnection(ConfigurationManager.ConnectionStrings("ASPNetDB").ConnectionString)
         Dim ResponsesSql As String = "select * from LessonActivities where UserName = @UserName"
         Dim cmd As OleDbCommand = New OleDb.OleDbCommand(ResponsesSql, oleDbCon)

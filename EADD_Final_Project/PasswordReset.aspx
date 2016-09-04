@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h3><strong>Password Reset</strong></h3>
+        <h3><strong>Password Reset Page</strong></h3>
     </div>
     </form>
 </body>
